@@ -30,32 +30,12 @@ restorr.forEach((note) => {
   limaker(note);
 });
 
-
-
-const del = (dl)=>{
+const del = (dl) => {
   const el = dl.parentNode;
-  const indx = [...el.parentElement.children].indexOf(el)
-  notesStorage.slice(indx,1)
+  const indx = [...el.parentElement.children].indexOf(el);
+  notesStorage.splice(indx, 1);
   localStorage.setItem("notes", JSON.stringify(notesStorage));
-  el.remove()
+  el.remove();
   console.log(notesStorage);
   console.log(indx);
-}
-
-
-
-
-
-
-
-
-
-
-
-// const deleteNote = (btn) => {
-//   let el = btn.parentNode;
-//   const index = [...el.parentElement.children].indexOf(el);
-//   notesStorage.splice(index, 1);
-//   localStorage.setItem("notes", JSON.stringify(notesStorage));
-//   el.remove();
-// };
+};
